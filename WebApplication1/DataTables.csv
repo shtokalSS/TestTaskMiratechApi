@@ -1,0 +1,47 @@
+﻿
+@Employees
+id,FullName
+1,Shtokal Serhii
+2,Elon Musk
+3,Bill Gates
+4,Jeff Bezos
+5,Jack Ma
+@EmployeesMeetings
+idE,idM
+1,8
+2,2
+3,5
+4,14
+5,11
+6,12
+5,10
+7,10
+1,16
+1,9
+4,1
+5,1
+4,3
+4,15
+1,4
+2,3
+2,13
+2,1
+5,4
+@Meetings
+id,Title
+1,Bussines in China
+2,SpaceX
+3,NeuroLink
+4,Aliexpress conference
+5,Windows Presentation
+6,Ebay 
+7,Amazon
+8,Interview in Miratech
+9,Meet1
+10,Meet2
+11,Meet3
+12,Meet4
+13,Meet5
+14,Meet6
+15,Meet7
+16,University lesson
