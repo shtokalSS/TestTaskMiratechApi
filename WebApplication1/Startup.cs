@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -28,7 +29,8 @@ namespace WebApplication1
         {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IDataProvider>(provider => new CsvDataProvider(@"E:\Programming\Work\TestWebAPI\WebApplication1\WebApplication1\DataTables.csv"));
+            var localPath = Directory.GetCurrentDirectory();
+            services.AddSingleton<IDataProvider>(provider => new CsvDataProvider(localPath+"//DataTables.csv"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
