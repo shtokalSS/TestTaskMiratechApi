@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.DataLayer;
@@ -19,7 +20,7 @@ namespace WebApplication1.Controllers
             _dataProvider = dataProvider;
         }
 
-        // GET: api/Employees
+        // GET: api/Employees/getall
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
@@ -30,6 +31,7 @@ namespace WebApplication1.Controllers
                 {
                     return NotFound();
                 }
+                
                 return Ok(result);
             }
             catch (Exception e)
@@ -39,8 +41,8 @@ namespace WebApplication1.Controllers
             }
         }
 
-        // GET: api/Employees/5
-        [HttpGet("GetMeetings/{id}")]
+        // GET: api/Employees/GetMeetings/1
+        [HttpGet("{id}/GetMeetings")]
         public IActionResult GetMeetingsForEmployee(int id)
         {
                 var result = _dataProvider.GetAllEmployeeMeetings(id);
