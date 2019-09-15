@@ -30,7 +30,7 @@ namespace WebApplication1
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var localPath = Directory.GetCurrentDirectory();
-            services.AddSingleton<IDataProvider>(provider => new CsvDataProvider(localPath+"//DataTables.csv"));
+            services.AddTransient<IDataProvider>(provider => new CsvDataProvider(localPath+"//DataTables.csv"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

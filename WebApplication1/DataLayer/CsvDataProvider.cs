@@ -16,6 +16,7 @@ namespace WebApplication1.DataLayer
         public CsvDataProvider(string path)
         {
             _path = path;
+            UpdateTablesFromCsv();
         }
 
         private void UpdateTablesFromCsv()
@@ -38,8 +39,6 @@ namespace WebApplication1.DataLayer
         }
         public IEnumerable<Meeting> GetAllEmployeeMeetings(int employeeId)
         {
-
-            UpdateTablesFromCsv();
             var records = TablesWithRecordsDictionary["EmployeesMeetings"];
 
             var meetingIds = records
@@ -64,7 +63,6 @@ namespace WebApplication1.DataLayer
 
         public IEnumerable<Employee> GetAllEmployees()
         {
-            UpdateTablesFromCsv();
             var records = TablesWithRecordsDictionary["Employees"];
 
             var employees = records.Select(r => new Employee { Id = int.Parse(r[0]), FullName = r[1] });
